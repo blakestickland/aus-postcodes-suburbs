@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.blakecode</groupId>
-	<artifactId>aupostcodes</artifactId>
+	<artifactId>postcodesau</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aupostcodes</name>
+	<name>postcodesau</name>
 	<description>Demo project for Aus Post tech test</description>
 	<properties>
 		<java.version>17</java.version>
@@ -29,11 +29,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
 		<dependency>
-		    <groupId>mysql</groupId>
-		    <artifactId>mysql-connector-java</artifactId>
-		    <scope>runtime</scope>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
