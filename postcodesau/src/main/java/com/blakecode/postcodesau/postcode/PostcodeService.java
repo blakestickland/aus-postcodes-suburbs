@@ -22,10 +22,15 @@ public class PostcodeService {
 		return postcodeRepository.findById(id);
 	}
 	
+	public List<Postcode> findBySuburb(@PathVariable String query) {
+		return postcodeRepository.searchForSuburb(query);
+	}
+	
+	
+	
 	public void create(PostcodeDTO postcode) {
 		Integer maxId = postcodeRepository.getMaxId();
 		maxId++;
-		System.out.println(maxId);
 		Postcode p = new Postcode(maxId, postcode.getSuburb(), postcode.getPostcode());
 		postcodeRepository.save(p);
 	}
