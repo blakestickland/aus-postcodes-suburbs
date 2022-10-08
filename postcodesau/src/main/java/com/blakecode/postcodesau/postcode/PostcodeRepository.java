@@ -13,5 +13,9 @@ public interface PostcodeRepository extends JpaRepository<Postcode, Integer> {
 	
 	@Query ("SELECT p FROM Postcode p WHERE " + 
 			"p.suburb LIKE CONCAT('%', :query, '%')")
-	List<Postcode> searchForSuburb(String query);
+	List<Postcode> findAllBySuburb(String query);
+	
+	@Query ("SELECT p FROM Postcode p WHERE " + 
+			"p.postcode LIKE CONCAT('%', :query, '%')")
+	List<Postcode> findAllByPostcode(String query);
 }

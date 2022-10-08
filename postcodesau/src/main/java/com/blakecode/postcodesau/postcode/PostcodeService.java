@@ -23,9 +23,12 @@ public class PostcodeService {
 	}
 	
 	public List<Postcode> findBySuburb(@PathVariable String query) {
-		return postcodeRepository.searchForSuburb(query);
+		return postcodeRepository.findAllBySuburb(query);
 	}
 	
+	public List<Postcode> findByPostcode(@PathVariable String query) {
+		return postcodeRepository.findAllByPostcode(query);
+	}
 	
 	
 	public void create(PostcodeDTO postcode) {
