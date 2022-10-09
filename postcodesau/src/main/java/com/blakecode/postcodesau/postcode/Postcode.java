@@ -29,6 +29,11 @@ public class Postcode {
 		this.longitude = longitude;
 	}
 	
+	public Postcode(String suburb, String postcode) {
+		this.suburb = suburb;
+		this.postcode = postcode;
+	}
+	
 	public Postcode(Integer id, String suburb, String postcode) {
 		this.id = id;
 		this.suburb = suburb;
