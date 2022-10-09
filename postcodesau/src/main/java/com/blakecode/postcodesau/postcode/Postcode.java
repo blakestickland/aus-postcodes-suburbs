@@ -1,10 +1,9 @@
 package com.blakecode.postcodesau.postcode;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "postcodes_geo")
@@ -12,11 +11,15 @@ public class Postcode {
 	@Id
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotBlank
 	private String suburb;
-	private String state;
+	@NotBlank
 	private String postcode;
+	private String state;
 	private float latitude;
 	private float longitude;
+	
+	public Postcode() {}
 	
 	public Postcode(String suburb, String state, String postcode, float latitude, float longitude) {
 		this.suburb = suburb;
@@ -32,7 +35,13 @@ public class Postcode {
 		this.postcode = postcode;
 	}
 	
-	public Postcode() {}
+	public Postcode(Integer id, String suburb, String postcode, String state) {
+		this.id = id;
+		this.suburb = suburb;
+		this.postcode = postcode;
+		this.state = state;
+	}
+	
 	
 	public Integer getId() {
 		return id;

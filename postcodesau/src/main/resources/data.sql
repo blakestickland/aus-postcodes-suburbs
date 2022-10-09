@@ -1,5 +1,3 @@
-
-
 INSERT INTO postcodes_geo (postcode, suburb, state, latitude, longitude) VALUES
 ('200', 'Australian National University', 'ACT', -35.280, 149.120),
 ('221', 'Barton', 'ACT', -35.200, 149.100),
@@ -15173,7 +15171,6 @@ INSERT INTO postcodes_geo (postcode, suburb, state, latitude, longitude) VALUES
 ('6432', 'South Boulder', 'WA', -30.780, 121.490),
 ('6432', 'Victory Heights', 'WA', -30.780, 121.490),
 ('6433', 'Hannans Po', 'WA', -31.880, 115.920),
-('6433', 'Kalgoorlie Po', 'WA', -31.880, 115.920),
 ('6433', 'Kalgoorlie Po', 'WA', -31.880, 115.920),
 ('6434', 'Cundeelee', 'WA', -30.500, 123.120),
 ('6434', 'Forrest', 'WA', -30.500, 123.120),
