@@ -25,13 +25,13 @@ public class PostcodeController {
 	@Autowired
 	private PostcodeService postcodeService;
 	
-	@GetMapping
+	@GetMapping("/admin")
 	public List<Postcode> getPostcodes() {
 		return postcodeService.getAll();
 	}
 	
 	// ENDPOINT: GET /aupostcodes/{id}
-	@GetMapping("/{id}")
+	@GetMapping("/admin/{id}")
 	public ResponseEntity<Postcode> getPostcodeById(@PathVariable(value = "id") int id) {
 		Postcode postcode = postcodeService.getPostcode(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Not found with id " + id));
@@ -67,7 +67,7 @@ public class PostcodeController {
 	
 	// CREATE
 	
-	@PostMapping
+	@PostMapping("/admin/create")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public void savePostcode(@Valid @RequestBody PostcodeDTO postcode) {
 		postcodeService.create(postcode);
