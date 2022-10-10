@@ -1,6 +1,15 @@
 # aus-postcodes-suburbs project
 
-API created in Java using Spring Boot that allows clients to search for Australian postcodes and suburbs. Clients with the admin login details can also add new suburb and postcode combinations.
+API created in Java using Spring Boot that allows clients to search for Australian postcodes and suburbs. Clients with the admin login details can also add new suburb and postcode combinations. 
+
+Deployed to AWS using Elastic Beanstalk (AWS RDS for the SQL database, EC2 running the server). 
+
+## Links
+### Github Repository
+https://github.com/blakestickland/aus-postcodes-suburbs
+
+### URL
+http://aupostcodessuburbs-env.eba-a548885m.ap-southeast-2.elasticbeanstalk.com/
 
 ## MVP:
 
@@ -15,16 +24,17 @@ API created in Java using Spring Boot that allows clients to search for Australi
     * GET   Health Check    returns “Hello World!”          200 OK
 ***
   * "/aupostcodes/search?postcode=[ENTER POSTCODE]"
-    * GET   Postcode Search returns JSON array of results   200 OK
+    * GET   Postcode Search returns JSON array of results   200 OK or 204 NO CONTENT
 ***
   * "/aupostcodes/search?suburb=[ENTER SUBURB]"
-    * GET   Suburb Search   returns JSON array of results   200 OK
+    * GET   Suburb Search   returns JSON array of results   200 OK or 204 NO CONTENT
+***
 ***
   * "/aupostcodes/admin"
     * GET   All records     requires a sign in              200 OK
 ***
   * "/aupostcodes/admin/[ENTER ID]"
-    * GET   ID Search       requires a sign in              200 OK or 500 not ID found
+    * GET   ID Search       requires a sign in              200 OK or 404 not found
 ***
   * "/aupostcodes/admin/create"
     * POST  Create postcode/suburb   requires a body/sign-in 201 created
