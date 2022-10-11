@@ -11,6 +11,9 @@ public interface PostcodeRepository extends JpaRepository<Postcode, Integer> {
 	@Query (value = "SELECT MAX(id) FROM Postcode")
 	public Integer getMaxId();
 	
+	@Query (value = "SELECT MIN(postcode) FROM Postcode")
+	public String getMaxPc();
+	
 	@Query ("SELECT p FROM Postcode p WHERE " + 
 			"p.suburb LIKE CONCAT('%', :query, '%')")
 	List<Postcode> findAllBySuburb(String query);

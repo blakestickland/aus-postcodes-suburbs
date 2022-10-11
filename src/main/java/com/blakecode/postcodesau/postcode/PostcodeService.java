@@ -33,6 +33,8 @@ public class PostcodeService {
 	
 	public void create(PostcodeDTO postcode) {
 		Integer maxId = postcodeRepository.getMaxId();
+		String maxPostcode =  postcodeRepository.getMaxPc();
+		System.out.println(maxPostcode);
 		maxId++;
 		Postcode p = new Postcode(maxId, postcode.getSuburb(), postcode.getPostcode(), postcode.getState());
 		postcodeRepository.save(p);
