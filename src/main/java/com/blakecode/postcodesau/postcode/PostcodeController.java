@@ -50,17 +50,24 @@ public class PostcodeController {
 	public ResponseEntity<List<Postcode>> findBySuburbOrPostcode(
 			@RequestParam(name="suburb", required=false) String suburb, 
 			@RequestParam(name="postcode", required=false) String postcode) {
+		
 		if (StringUtils.hasLength(suburb)) {
 			List<Postcode> suburbs = postcodeService.findBySuburb(suburb);
+			if (suburbs.isEmpty()) {
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(suburbs, HttpStatus.OK);	
 		} 
+		
 		if (StringUtils.hasLength(postcode)) {
 			List<Postcode> postcodes = postcodeService.findByPostcode(postcode);
+			if (postcodes == null) {
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(postcodes, HttpStatus.OK);	
-		} 
-		else {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
+		
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
 	

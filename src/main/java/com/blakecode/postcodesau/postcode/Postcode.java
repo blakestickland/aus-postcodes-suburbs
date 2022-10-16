@@ -3,29 +3,21 @@ package com.blakecode.postcodesau.postcode;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.Range;
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "postcodes_geo")
 public class Postcode {
 	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO) 
 //	Not using @GeneratedValue due to database seed data being INSERTED with a single INSERT request.
 //	Caused a conflict with the IDs created at that time. 
 //	The Hibernate Sequence had next ID as 2 due to the single INSERT request.
 	private Integer id;
 	
-	@NotBlank(message = "Postcode suburb cannot be blank")
-	@Length(min = 5, max = 99, message = "Postcode suburb must be between 5-99 characters")
+	@NonNull
 	private String suburb;
 	
-	@NotBlank(message = "Postcode postcode cannot be blank")
-	@Length(min = 4, max = 4, message = "Postcode postcode must have four digits such as 3121 or 7241")
-	@Range(min = 1001, max = 9999, message = "Postcode postcode must be between 1001 and 9999")
+	@NonNull
 	private String postcode;
 	
 	private String state;
