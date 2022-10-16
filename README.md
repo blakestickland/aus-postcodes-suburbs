@@ -95,10 +95,10 @@ or
 
 ## Future development
 * Add more error handling. Provide clear and descriptive messages to users.
-* Change how the data set seeds when launching the application. Current implementation caused an issue with Hibernate's auto increment for the ID so added code to workaround.
+* Change how the data set seeds when launching the application. Current implementation caused an issue with Hibernate's auto increment for the ID so added code as a workaround.
 * Increase the number of tests.
 * Change to a token based Admin login such as JWT rather than the Spring Security session based method implemented. 
-* In order to get the POST request to work, CSRF has been diabled. It would be better to not disable CSRF.  
+* In order to get the POST request to work, CSRF has been disabled. It would be better to not disable CSRF.  
 
 ## Contributor
 * Blake Stickland https://github.com/blakestickland

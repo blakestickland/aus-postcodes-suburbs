@@ -27,7 +27,12 @@ public class PostcodeService {
 	}
 	
 	public List<Postcode> findByPostcode(@PathVariable String query) {
-		return postcodeRepository.findAllByPostcode(query);
+		List<Postcode> localities = postcodeRepository.findAllByPostcode(query);
+		if (localities.isEmpty()) {
+			return null;
+		} else {
+			return localities;			
+		}
 	}
 	
 	
